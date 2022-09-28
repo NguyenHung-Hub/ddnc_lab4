@@ -11,10 +11,6 @@ export const GridProduct = () => {
         <View style={styles.wrapper}>
             <Header />
             <View style={styles.body}>
-                <Text style={styles.text1}>
-                    Bạn có thắc mắc với sản phẩm vừa xem. Đừng ngại chat với
-                    shop!
-                </Text>
                 <View>
                     <FlatList
                         data={products2}
@@ -36,7 +32,7 @@ const styles = StyleSheet.create({
         height: "100%",
         flexDirection: "column",
 
-        backgroundColor: "#fff",
+        // backgroundColor: "#fff",
     },
     body: {
         flex: 1,

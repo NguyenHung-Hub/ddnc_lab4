@@ -1,6 +1,7 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { Rating } from "react-native-ratings";
+import formatMoney from "../utils/formatMoney";
 
 export const Card = ({ product }) => {
     console.log(product);
@@ -22,7 +23,9 @@ export const Card = ({ product }) => {
                     <Text>(15)</Text>
                 </View>
                 <View style={styles.wrapperPrice}>
-                    <Text style={styles.price}>69000</Text>
+                    <Text style={styles.price}>
+                        {formatMoney(product.price)} đ
+                    </Text>
                     <Text style={styles.discount}>39%</Text>
                 </View>
             </View>
@@ -65,7 +68,14 @@ const styles = StyleSheet.create({
 
         // backgroundColor:
     },
-    wrapperPrice: { flexDirection: "row" },
-    price: {},
-    discount: {},
+    wrapperPrice: {
+        flexDirection: "row",
+    },
+    price: {
+        fontWeight: "bold",
+    },
+    discount: {
+        marginLeft: 16,
+        color: "#969DAA",
+    },
 });
