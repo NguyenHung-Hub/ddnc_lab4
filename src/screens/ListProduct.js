@@ -31,7 +31,7 @@ export const ListProduct = ({ navigation }) => {
                     />
                 </View>
             </View>
-            <BottomBar />
+            <BottomBar navigation={navigation} />
         </View>
     );
 };

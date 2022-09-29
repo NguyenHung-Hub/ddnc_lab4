@@ -30,7 +30,7 @@ export const GridProduct = ({ navigation }) => {
                     />
                 </View>
             </View>
-            <BottomBar />
+            <BottomBar navigation={navigation} />
         </SafeAreaView>
     );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export const BottomBar = () => {
+export const BottomBar = ({ navigation }) => {
     return (
         <View style={styles.wrapper}>
             <TouchableOpacity style={styles.wrapperIcon}>
@@ -12,7 +12,10 @@ export const BottomBar = () => {
                 <Image source={require("../../assets/icons/home.png")} />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.wrapperIcon}>
+            <TouchableOpacity
+                style={styles.wrapperIcon}
+                onPress={() => navigation.goBack()}
+            >
                 <Image source={require("../../assets/icons/back.png")} />
             </TouchableOpacity>
         </View>
