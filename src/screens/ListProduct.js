@@ -1,14 +1,21 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+    FlatList,
+    Image,
+    StatusBar,
+    StyleSheet,
+    Text,
+    View,
+} from "react-native";
 import products from "../../data/products";
 import { BottomBar } from "../components/BottomBar";
 import { Header } from "../components/Header";
 import { ProductItem } from "../components/ProductItem";
 
-export const ListProduct = () => {
+export const ListProduct = ({ navigation }) => {
     return (
         <View style={styles.wrapper}>
-            <Header />
+            <Header navigation={navigation} />
             <View style={styles.body}>
                 <Text style={styles.text1}>
                     Bạn có thắc mắc với sản phẩm vừa xem. Đừng ngại chat với
@@ -31,6 +38,8 @@ export const ListProduct = () => {
 
 const styles = StyleSheet.create({
     wrapper: {
+        flex: 1,
+        marginTop: StatusBar.currentHeight,
         width: "100%",
         height: "100%",
         flexDirection: "column",

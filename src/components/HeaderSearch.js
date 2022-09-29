@@ -1,7 +1,9 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { HInput } from "./HInput";
+import search from "../../assets/icons/search.png";
 
-export const Header = ({ navigation }) => {
+export const HeaderSearch = ({ navigation }) => {
     return (
         <View style={styles.wrapper}>
             <TouchableOpacity
@@ -10,11 +12,20 @@ export const Header = ({ navigation }) => {
             >
                 <Image source={require("../../assets/icons/back_icon.png")} />
             </TouchableOpacity>
-            <View style={styles.wrapperTitle}>
-                <Text style={styles.title}>Chat</Text>
+
+            <View style={styles.wrapperSearch}>
+                <HInput
+                    startIcon={<Image source={search} />}
+                    placeholder="Tìm kiếm sản phẩm"
+                    style={styles.search}
+                />
             </View>
+
             <TouchableOpacity style={styles.wrapperIcon}>
                 <Image source={require("../../assets/icons/cart_icon.png")} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.wrapperIcon}>
+                <Image source={require("../../assets/icons/dot_3.png")} />
             </TouchableOpacity>
         </View>
     );
@@ -33,9 +44,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#1BA9FF",
     },
     wrapperIcon: {},
-    wrapperTitle: {},
-    title: {
-        color: "white",
-        fontSize: 18,
+    wrapperSearch: {
+        width: 200,
+    },
+    search: {
+        paddingVertical: 3,
+        paddingHorizontal: 9,
     },
 });

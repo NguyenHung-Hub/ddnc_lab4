@@ -1,15 +1,24 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+    FlatList,
+    Image,
+    StyleSheet,
+    Text,
+    View,
+    StatusBar,
+    SafeAreaView,
+} from "react-native";
 import products, { products2 } from "../../data/products";
 import { BottomBar } from "../components/BottomBar";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
+import { HeaderSearch } from "../components/HeaderSearch";
 import { ProductItem } from "../components/ProductItem";
 
-export const GridProduct = () => {
+export const GridProduct = ({ navigation }) => {
     return (
-        <View style={styles.wrapper}>
-            <Header />
+        <SafeAreaView style={styles.wrapper}>
+            <HeaderSearch navigation={navigation} />
             <View style={styles.body}>
                 <View>
                     <FlatList
@@ -22,12 +31,14 @@ export const GridProduct = () => {
                 </View>
             </View>
             <BottomBar />
-        </View>
+        </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
     wrapper: {
+        flex: 1,
+        marginTop: StatusBar.currentHeight,
         width: "100%",
         height: "100%",
         flexDirection: "column",
@@ -35,7 +46,7 @@ const styles = StyleSheet.create({
         // backgroundColor: "#fff",
     },
     body: {
-        flex: 1,
+        flex: 2,
         justifyContent: "center",
     },
     text1: {

@@ -6,6 +6,7 @@ export default function HButton({
     text,
     textColor,
     fontSize,
+    fontWeight = "normal",
     bgColor = "#fff",
     radius,
     width,
@@ -40,7 +41,12 @@ export default function HButton({
             onPress={onPress}
         >
             <View>{startIcon != null ? startIcon : ""}</View>
-            <Text style={[styles.textBtn, { color: textColor, fontSize }]}>
+            <Text
+                style={[
+                    styles.textBtn,
+                    { color: textColor, fontSize, fontWeight },
+                ]}
+            >
                 {text}
             </Text>
             <View>{endIcon != null ? endIcon : ""}</View>
