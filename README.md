@@ -1,11 +1,10 @@
+## **Lab 4a**
+
 <style>
     .img{
         width:300px
     }
 </style>
-
-## **Lab 4a**
-
 <image src="./images/lab4a.jpg" class="img"/>
 
 <br>
